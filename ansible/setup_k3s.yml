@@ -1,0 +1,14 @@
+---
+- name: Install K3s on Master 
+  hosts: k3s_master
+  become: yes
+  roles:
+    - k3s-master
+  tags: master
+
+- name: Install K3s on Worker
+  hosts: k3s_worker
+  become: yes
+  roles:
+    - k3s-worker
+  tags: worker
